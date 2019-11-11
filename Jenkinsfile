@@ -10,7 +10,7 @@ node('master') {
  }
 
  stage('Unit Test') {
-  sh "npm test"
+  sh '~/.nvm/versions/node/v10.16.3/bin/npm test'
   echo 'passed Jest'
  }
 
@@ -19,7 +19,7 @@ node('master') {
   sh "docker build . -t react-ui:${BUILD_NUMBER}"
   sh "docker images"
  }
- 
+
  stage('Docker Deployment') {
   sh "docker ps -a"
   sh 'docker stop react-ui-container || exit 0'
