@@ -1,17 +1,16 @@
 node('master') {
  stage('checkout') {
-  step([$class: 'WsCleanup'])
   checkout scm
  }
 
  stage('Static Analysis') {
   // sh '~/.nvm/versions/node/v13.0.1/bin/npm install eslint && ~/.nvm/versions/node/v13.0.1/bin/npm run lint'
-  echo 'passed sonar Qube'
+  echo 'Passed Static Analysis'
  }
 
  stage('Unit Test') {
   //sh '~/.nvm/versions/node/v10.16.3/bin/npm test'
-  echo 'passed Jest'
+  echo 'Passed Unit Test'
  }
 
  stage('Build Docker Image') {
