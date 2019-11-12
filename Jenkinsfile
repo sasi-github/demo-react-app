@@ -14,9 +14,9 @@ node('master') {
  }
 
  stage('Build Docker Image') {
-  sh "podman images"
-  sh "podman build . -t react-app:${BUILD_NUMBER}"
-  sh "podman images"
+  sh "docker images"
+  sh "docker build . -t react-app:${BUILD_NUMBER}"
+  sh "docker images"
  }
 
 //  stage('Docker Deployment') {
