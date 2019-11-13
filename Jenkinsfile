@@ -4,7 +4,7 @@ node('master') {
  }
 
  stage('Static Analysis') {
-  // sh '~/.nvm/versions/node/v13.0.1/bin/npm install eslint && ~/.nvm/versions/node/v13.0.1/bin/npm run lint'
+  //sh '~/.nvm/versions/node/v13.0.1/bin/npm install eslint && ~/.nvm/versions/node/v13.0.1/bin/npm run lint'
   echo 'Passed Static Analysis'
  }
 
