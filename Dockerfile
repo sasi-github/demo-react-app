@@ -1,7 +1,7 @@
 #Build Stage Start
 
 #Specify a base image
-FROM node:alpine as builder 
+FROM node as builder 
 
 #Specify a working directory
 WORKDIR '/app'
