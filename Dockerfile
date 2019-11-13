@@ -1,7 +1,7 @@
 #Build Stage Start
 
 #Specify a base image
-FROM node:10
+FROM node:10 as builder
 
 #Specify a working directory
 WORKDIR '/app'
@@ -10,14 +10,16 @@ WORKDIR '/app'
 COPY package.json .
 
 #Install dependencies
-RUN npm config set registry http://registry.npmjs.org/ && npm install --no-optional --verbos
-#RUN npm install --ignore-scripts --unsafe-perm
+RUN npm config set registry http://registry.npmjs.org/
+RUN npm install --ignore-scripts --unsafe-perm
 
 #Copy remaining files
 COPY . .
 
 #Build the project for production
 RUN npm run build 
+
+CMD [ "node", "server.js" ]
 
 #Run Stage Start
 FROM nginx
