@@ -10,13 +10,13 @@ WORKDIR '/app'
 COPY package.json .
 
 #Install dependencies
-RUN npm config set registry "https://registry.npmjs.com/" && npm install
+#RUN npm config set registry "https://registry.npmjs.com/" && npm install
 
 #Copy remaining files
 COPY . .
 
 #Build the project for production
-#RUN npm run build 
+RUN npm run build 
 
 #Run Stage Start
 FROM nginx
