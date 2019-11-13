@@ -16,7 +16,7 @@ RUN npm config set registry "https://registry.npmjs.com/" && npm install
 COPY . .
 
 #Build the project for production
-RUN npm run build 
+#RUN npm run build 
 
 #Run Stage Start
 FROM nginx
