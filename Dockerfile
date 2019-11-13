@@ -11,7 +11,7 @@ COPY package.json .
 
 #Install dependencies
 RUN npm config set registry http://registry.npmjs.org/
-RUN npm install --ignore-scripts --unsafe-perm
+RUN yarn install
 
 #Copy remaining files
 COPY . .
