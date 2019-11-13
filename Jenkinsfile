@@ -15,18 +15,17 @@ node('master') {
 
  stage('Build Docker Image') {
   sh "docker images"
-  sh "docker build . -t react-app:${BUILD_NUMBER}"
+  sh "docker build . -t myreact-app:${BUILD_NUMBER}"
   sh "docker images"
  }
 
-//  stage('Docker Deployment') {
-//   sh "docker ps -a"
-//   sh 'docker stop react-ui-container || exit 0'
-//   sh 'docker kill react-ui-container || exit 0'
-//   sh 'docker rm react-ui-container || exit 0'
-//   sh "docker run --name react-ui-container -p 80:80 react-ui:${BUILD_NUMBER} &"
-//   sh "docker restart react-ui-container"
-//   sh "docker ps -a"
-//  }
+  stage('Docker Deployment') {
+   sh "docker ps -a"/   sh 'docker stop react-ui-container || exit 0'
+   sh 'docker kill react-ui-container || exit 0'
+   sh 'docker rm react-ui-container || exit 0'
+   sh "docker run --name react-ui-container -p 80:80 react-ui:${BUILD_NUMBER} &"
+   sh "docker restart react-ui-container"
+   sh "docker ps -a"
+  }
 
 }
