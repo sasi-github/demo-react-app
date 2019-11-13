@@ -6,12 +6,12 @@ node('master') {
 
  stage('Static Analysis') {
   //sh '~/.nvm/versions/node/v13.0.1/bin/npm install eslint && ~/.nvm/versions/node/v13.0.1/bin/npm run lint'
-  sh '~/.nvm/versions/node/v13.0.1/bin/npm run lint'
+  sh '. ~/.nvm/versions/node/v13.0.1/bin/npm run lint'
   echo 'Passed Static Analysis'
  }
 
  stage('Unit Test') {
-  sh '~/.nvm/versions/node/v10.16.3/bin/npm test'
+  sh '. ~/.nvm/versions/node/v10.16.3/bin/npm test'
   echo 'Passed Unit Test'
  }
 
