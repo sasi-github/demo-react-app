@@ -19,14 +19,13 @@ node('master') {
   sh "docker images"
  }
 
-//  stage('Docker Deployment') {
-//   sh "docker ps -a"
-//   sh 'docker stop react-ui-container || exit 0'
-//   sh 'docker kill react-ui-container || exit 0'
-//   sh 'docker rm react-ui-container || exit 0'
-//   sh "docker run --name react-ui-container -p 80:80 react-ui:${BUILD_NUMBER} &"
-//   sh "docker restart react-ui-container"
-//   sh "docker ps -a"
-//  }
+  stage('Docker Deployment') {
+   sh "docker ps -a"/   sh 'docker stop react-ui-container || exit 0'
+   sh 'docker kill react-ui-container || exit 0'
+   sh 'docker rm react-ui-container || exit 0'
+   sh "docker run --name react-ui-container -p 80:80 react-ui:${BUILD_NUMBER} &"
+   sh "docker restart react-ui-container"
+   sh "docker ps -a"
+  }
 
 }
