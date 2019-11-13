@@ -1,7 +1,7 @@
 #Build Stage Start
 
 #Specify a base image
-FROM node as builder 
+FROM node:10
 
 #Specify a working directory
 WORKDIR '/app'
@@ -10,7 +10,7 @@ WORKDIR '/app'
 COPY package.json .
 
 #Install dependencies
-RUN npm config set registry "https://registry.npmjs.com/" && npm install
+RUN npm install
 
 #Copy remaining files
 COPY . .
