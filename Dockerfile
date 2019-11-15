@@ -19,7 +19,8 @@ COPY . .
 #Build the project for production
 RUN npm run build 
 
-CMD [ "node", "server.js" ]
+#CMD [ "node", "server.js" ]
+CMD [ "npm", "dev" ]
 
 #Run Stage Start
 FROM nginx
