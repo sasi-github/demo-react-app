@@ -26,7 +26,7 @@ node('master') {
    sh 'docker stop myreact-app-container || exit 0'
    sh 'docker kill myreact-app-container || exit 0'
    sh 'docker rm myreact-app-container || exit 0'
-   sh "docker run --name myreact-app-container -p 80:3000 myreact-app:${BUILD_NUMBER} &"
+   sh "docker run --name myreact-app-container -p 3000:3000 myreact-app:${BUILD_NUMBER} &"
    sh "docker restart myreact-app-container"
    sh "docker ps -a"
   }
