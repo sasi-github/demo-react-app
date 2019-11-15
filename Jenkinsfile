@@ -22,7 +22,8 @@ node('master') {
  }
 
   stage('Deployment') {
-   sh "docker ps -a"/   sh 'docker stop react-ui-container || exit 0'
+   sh "docker ps -a"
+   sh 'docker stop react-ui-container || exit 0'
    sh 'docker kill react-ui-container || exit 0'
    sh 'docker rm react-ui-container || exit 0'
    sh "docker run --name react-ui-container -p 3000:3000 react-ui:${BUILD_NUMBER} &"
