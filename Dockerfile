@@ -23,7 +23,7 @@ EXPOSE 5000
 EXPOSE 3000
 
 #CMD [ "npm", "dev" ]
-CMD [ "npm", "client" ]
+CMD [ "npm", "start" ]
 
 #Run Stage Start
 FROM nginx
