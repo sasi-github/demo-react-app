@@ -22,8 +22,8 @@ RUN npm run build
 EXPOSE 5000
 EXPOSE 3000
 
-#CMD [ "npm", "dev" ]
-CMD [ "npm", "run", "start" ]
+CMD [ "npm", "dev" ]
+#CMD [ "npm", "run", "start" ]
 
 #Run Stage Start
 FROM nginx
