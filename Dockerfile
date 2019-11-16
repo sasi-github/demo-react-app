@@ -23,7 +23,7 @@ EXPOSE 5000
 EXPOSE 3000
 
 #CMD [ "npm", "dev" ]
-CMD [ "yarn", "client" ]
+CMD [ "npm", "run", "start" ]
 
 #Run Stage Start
 FROM nginx
