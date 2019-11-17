@@ -17,7 +17,7 @@ RUN yarn install
 COPY . .
 
 #Build the project for production
-RUN npm run build 
+#RUN npm run build 
 
 EXPOSE 5000
 
