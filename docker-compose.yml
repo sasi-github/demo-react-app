@@ -3,7 +3,7 @@ services:
   server:
     build:
       context: .
-    command: npm run server
+    command: /usr/app/node_modules/.bin/nodemon server.js
     volumes:
       - .:/usr/app
       - /usr/app/node_modules
@@ -16,7 +16,7 @@ services:
   client:
     build:
       context: .
-    command: npm start
+    command: npm run start
     volumes:
       - .:/usr/app
       - /usr/app/node_modules
