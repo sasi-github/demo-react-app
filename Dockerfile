@@ -19,8 +19,7 @@ COPY . .
 #Build the project for production
 RUN npm run build 
 
-EXPOSE 5000
-EXPOSE 3000
+EXPOSE 8081
 
 CMD [ "npm","dev"]
 
