@@ -17,17 +17,19 @@ node('master') {
 
  stage('Build') {
   sh "docker images"
-  sh "docker build . -t myreact-app:${BUILD_NUMBER}"
+  //sh "docker build . -t myreact-app:${BUILD_NUMBER}"
+  sh "docker-compose up --build"
   sh "docker images"
  }
 
   stage('Deployment') {
    sh "docker ps -a"
-   sh 'docker stop myreact-app-container || exit 0'
-   sh 'docker kill myreact-app-container || exit 0'
-   sh 'docker rm myreact-app-container || exit 0'
-   sh "docker run --name myreact-app-container -p 8081:80 -p 5001:50 myreact-app:${BUILD_NUMBER} &"
-   sh "docker restart myreact-app-container"
+   sh "docker-compose up"
+   //sh 'docker stop myreact-app-container || exit 0'
+   //sh 'docker kill myreact-app-container || exit 0'
+   //sh 'docker rm myreact-app-container || exit 0'
+   //sh "docker run --name myreact-app-container -p 8081:80 -p 5001:50 myreact-app:${BUILD_NUMBER} &"
+   //sh "docker restart myreact-app-container"
    sh "docker ps -a"
   }
 
