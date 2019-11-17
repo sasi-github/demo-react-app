@@ -19,7 +19,10 @@ COPY . .
 #Build the project for production
 RUN npm run build 
 
-CMD [ "npm","dev"]
+EXPOSE 5000
+
+CMD [ "npm","run","server"]
+CMD [ "npm","start"]
 
 #Run Stage Start
 FROM nginx
