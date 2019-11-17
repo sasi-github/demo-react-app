@@ -5,8 +5,8 @@ services:
       context: ./
     command: /usr/app/node_modules/.bin/nodemon server.js
     volumes:
-      - ./:/usr/app
-      - /usr/app/node_modules
+      - ./:/app
+      - /app/node_modules
     ports:
       - "5000:5000"
     # env_file: ./server/.env # TODO - uncomment this to auto-load your .env file!
@@ -18,8 +18,8 @@ services:
       context: ./
     command: npm run start
     volumes:
-      - ./:/usr/app
-      - /usr/app/node_modules
+      - ./:/app
+      - /app/node_modules
     depends_on:
       - server
     ports:
